@@ -4,11 +4,14 @@ MAINTAINER    abaranov@linux.com
 
 ENV           UPDATED_AT 2015-03-25
 
+ENV           REPO_PUPPETLABS_URL http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+ENV           REPO_FOREMAN_URL    http://yum.theforeman.org/releases/latest/el6/x86_64/foreman-release.rpm
+
 # Puppetlabs repo
-RUN           rpm --quiet -Uvh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+RUN           rpm --quiet -Uvh ${REPO_PUPPETLABS_URL}
 
 # Foreman repo
-RUN           rpm --quiet -Uvh http://yum.theforeman.org/releases/latest/el6/x86_64/foreman-release.rpm
+RUN           rpm --quiet -Uvh ${REPO_FOREMAN_URL}
 
 # Update yum cache
 RUN           yum -y -q makecache && \
