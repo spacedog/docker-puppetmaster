@@ -22,8 +22,11 @@ RUN           yum -y -q makecache && \
 RUN           yum -y -q install \
                 httpd \
                 mod_passenger \
+                mod_ssl \
                 puppet-server && \
               yum -y -q clean all
+
+ADD           puppetmaster.conf /etc/httpd/conf.d/puppetmaster.conf
 
 # Expose ports
 EXPOSE 8140
