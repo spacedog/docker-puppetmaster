@@ -7,6 +7,9 @@ ENV           UPDATED_AT 2015-03-25
 # Puppetlabs repo
 RUN           rpm --quiet -Uvh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
 
+# Foreman repo
+RUN           rpm --quiet -Uvh http://yum.theforeman.org/releases/latest/el6/x86_64/foreman-release.rpm
+
 # Update yum cache
 RUN           yum -y -q makecache && \
               yum -y -q update && \
