@@ -31,6 +31,7 @@ ADD           puppetmaster.conf /etc/httpd/conf.d/puppetmaster.conf
 # Passenger rack
 RUN           mkdir -p /etc/puppet/rack/puppetmasterd/{public,tmp}
 ADD           config.ru /etc/puppet/rack/puppetmasterd/config.ru
+RUN           chown puppet:puppet /etc/puppet/rack/puppetmasterd/config.ru
 
 # Expose ports
 EXPOSE 8140
