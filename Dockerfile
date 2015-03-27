@@ -23,6 +23,7 @@ RUN           yum -y -q install \
                 httpd \
                 mod_passenger \
                 mod_ssl \
+                puppetdb-terminus \
                 puppet-server && \
               yum -y -q clean all
 
