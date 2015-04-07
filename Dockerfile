@@ -33,6 +33,9 @@ ADD           puppetmaster.conf /etc/httpd/conf.d/puppetmaster.conf
 RUN           mkdir -p /etc/puppet/rack/puppetmasterd/{public,tmp}
 ADD           config.ru /etc/puppet/rack/puppetmasterd/config.ru
 RUN           chown puppet:puppet /etc/puppet/rack/puppetmasterd/config.ru
+# Configuration files
+ADD           routes.yaml /etc/puppet/routes.yaml
+ADD           puppetdb.conf /etc/puppet/puppetdb.conf
 
 # VOLUMES
 VOLUME        /var/lib/puppet/ssl
