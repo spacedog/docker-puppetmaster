@@ -37,7 +37,7 @@ RUN           chown puppet:puppet /etc/puppet/rack/puppetmasterd/config.ru
 ADD           routes.yaml /etc/puppet/routes.yaml
 ADD           puppetdb.conf /etc/puppet/puppetdb.conf
 ADD           external_node /etc/puppet/bin/external_node
-RUN           chown 755 /etc/puppet/bin/external_node
+RUN           chmod 755 /etc/puppet/bin/external_node
 
 # VOLUMES
 VOLUME        /var/lib/puppet/ssl
