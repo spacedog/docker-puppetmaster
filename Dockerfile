@@ -27,6 +27,7 @@ RUN           yum -y -q install \
                 puppet-server && \
               yum -y -q clean all
 
+RUN           gem install hiera-eyaml
 ADD           puppetmaster.conf /etc/httpd/conf.d/puppetmaster.conf
 
 # Passenger rack
