@@ -39,6 +39,7 @@ ADD           routes.yaml /etc/puppet/routes.yaml
 ADD           puppetdb.conf /etc/puppet/puppetdb.conf
 ADD           external_node /etc/puppet/bin/external_node
 RUN           chmod 755 /etc/puppet/bin/external_node
+RUN           rm /etc/puppet/puppet.conf
 
 # VOLUMES
 VOLUME        /var/lib/puppet/ssl
